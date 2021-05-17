@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<br>
+<div class="container-fluid" >
+   
+    {% include 'monthlyfilters.html' %}
+    <br>
+    <h5>Threats Reporting Monthly Analysis</h5>
+  <br> 
+     <table class="table table-bordered" style="background-color: white;">
+     <!-- <table class="table table-striped"> -->
+         
+
+    <thead class="thead-dark">
+    <tr>
+        <th>#</th>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Electronic fraud</th>
+        <th>Cyber harassment</th>
+        <th>Revenge porn </th>
+        <th>Cyber stalking</th> 
+        <th>Phishing</th>
+    </tr>
+    </thead> 
+    <tr>
+       
+        <!-- <td scope="col">January</td>
+        <td scope="col">February</td>
+        <td>March</td>
+        <td>April</td>
+        <td>May</td>
+        <td>June</td> -->
+        
+
+    {% for SocialMediaThreats in SocialMediaThreats %}
+    <tr>
+        <td>{{ SocialMediaThreats.id }}</td>
+        <td>{{ SocialMediaThreats.yearreported }}</td>
+        <td>{{ SocialMediaThreats.monthreported }}</td>
+        <td>5</td>
+        <td>5</td>
+    </tr> 
+
+    {% endfor %} 
+    </table>
+    </div>
+
+
+
+{% endblock content %}

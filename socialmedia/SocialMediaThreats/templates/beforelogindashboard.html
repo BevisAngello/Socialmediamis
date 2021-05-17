@@ -1,0 +1,262 @@
+
+  {% extends 'beforeloginbase.html' %}
+
+  {% block content %}
+
+  {% include 'status.html' %}
+
+  <br>
+  
+
+  <div class="row">
+    <div class="col">
+  <style>
+      #container {
+    height: 400px;
+  }
+  
+  .highcharts-figure, .highcharts-data-table table {
+    min-width: 270px;
+    max-width: 650px;
+    margin: 1em auto;
+    padding-left: 20px;
+  }
+  
+  #datatable {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 95%;
+    max-width: 500px;
+  }
+  #datatable caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    /* color: #555; */
+    color: rgb(36, 27, 27);
+  }
+  #datatable th {
+    font-weight: 600;
+    padding: 0.5em;
+  }
+  #datatable td, #datatable th, #datatable caption {
+    padding: 0.5em;
+  }
+  #datatable thead tr, #datatable tr:nth-child(even) {
+    background: #f1f7ff;
+    /* background: #f8f8f8; */
+  }
+  #datatable tr:hover {
+    /* background: #f1f7ff; */
+    background: #f8f8f8;
+  }
+  </style>
+  <figure class="highcharts-figure">
+      <div id="container"></div>
+      <!-- <p class="highcharts-description">
+        Chart showing how an HTML table can be used as the data source for the
+        chart using the Highcharts data module. The chart is built by
+        referencing the existing HTML data table in the page. Several common
+        data source types are available, including CSV and Google Spreadsheet.
+      </p> -->
+    
+      <table id="datatable" >
+        <thead>
+          <tr>
+            <th></th>
+            <th>No. Social Media Crimes</th>
+            <!-- <th>No. Awareness Campaigns</th>  -->
+           </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <th>Electronic fraud</th>
+            <td>{{total_Electronic_fraud}}</td>
+            <!-- <td>4</td> -->
+          </tr>
+          <tr>
+            <th>Cyber harassment</th>
+            <td>{{total_Cyber_harassment}}</td>
+            <!-- <td>0</td> -->
+          </tr>
+          <tr>
+            <th>Revenge porn</th>
+            <td>{{total_Revenge_porn}}</td>
+            <!-- <td>11</td> -->
+          </tr>
+          <tr>
+            <th>Cyber stalking</th>
+            <!-- <td>1</td> -->
+            <td>{{total_Cyber_stalking}}</td>
+          </tr>
+          <tr>
+            <th>Phishing</th>
+            <!-- <td>2</td> -->
+            <td>{{total_Phishing}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+  
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  
+    <script>
+    Highcharts.chart('container', {
+      data: {
+        table: 'datatable'
+      },
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Number of Social media Crimes reported'
+      },
+      yAxis: {
+        allowDecimals: false,
+        title: {
+          text: 'Units'
+        }
+      },
+      tooltip: {
+        formatter: function () {
+          return '<b>' + this.series.name + '</b><br/>' +
+            this.point.y + ' ' + this.point.name.toLowerCase();
+        }
+      }
+    });
+  </script>
+  </div> 
+  
+  <div class="col">
+  <style>
+    #container1 {
+  height: 400px;
+  }
+  
+  .highcharts-figure, .highcharts-data-table table {
+  min-width: 280px;
+  max-width: 650px;
+  margin: 1em auto;
+  }
+  
+  #datatable1 {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 95%;
+  max-width: 500px;
+  }
+  #datatable1 caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+  }
+  #datatable1 th {
+  font-weight: 600;
+  padding: 0.5em;
+  }
+  #datatable1 td, #datatable1 th, #datatable1 caption {
+  padding: 0.5em;
+  }
+  #datatable1 thead tr, #datatable1 tr:nth-child(even) {
+  background: #f8f8f8;
+  }
+  #datatable1 tr:hover {
+  background: #f1f7ff;
+  }
+  </style>
+  <figure class="highcharts-figure">
+    <div id="container1"></div>
+    <!-- <p class="highcharts-description">
+      Chart showing how an HTML table can be used as the data source for the
+      chart using the Highcharts data module. The chart is built by
+      referencing the existing HTML data table in the page. Several common
+      data source types are available, including CSV and Google Spreadsheet.
+    </p> -->
+  
+    <table id="datatable1">
+      <thead>
+          <tr>
+            <th></th>
+           
+            <th>No. Awareness Campaigns</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <th>Radio Ads</th>
+            
+            <td>{{total_Radio_Ads}}</td>
+          </tr>
+          <tr>
+            <th>Television</th>
+           
+            <td>{{total_Television}}</td>
+          </tr>
+          <tr>
+            <th>Social media Influencing</th>
+            <td>{{total_Social_media_Influencing}}</td>
+           
+          </tr>
+          <tr>
+            <th>Cyber education</th>
+            
+            <td>{{total_Cyber_education}}</td>
+          </tr>
+          <tr>
+            <th>Phishing</th>
+            
+            <td>{{total_Phishing_Awareness}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </figure>
+  
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  
+  <script>
+  Highcharts.chart('container1', {
+    data: {
+      table: 'datatable1'
+    },
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Number of Social media awareness Campaigns'
+    },
+    yAxis: {
+      allowDecimals: false,
+      title: {
+        text: 'Units'
+      }
+    },
+    tooltip: {
+      formatter: function () {
+        return '<b>' + this.series.name + '</b><br/>' +
+          this.point.y + ' ' + this.point.name.toLowerCase();
+      }
+    }
+  });
+  </script>
+  
+
+</div>
+</div>
+
+  
+  
+  
+  {% endblock content %}

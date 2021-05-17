@@ -1,0 +1,171 @@
+
+      <!-- </script>
+      </head>
+      <body> 
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <form class="form-inline">
+            
+            <a class="navbar-brand" href="#">
+              <img src="/static/Socalslogo1.jpg" width="120" height="70" alt="" loading="lazy">
+              <h4 class="d-inline">Threat Reporting</h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+              <div class="collapse navbar e px-3" >Dasboard</a> 
+                
+                  <div class="navbar-nav">
+                    
+                
+                    <button type="button" class="btn btn-primary">
+                       <a href="/beforelogindashboard" class="nav-item nav-link active">Dashboard</a> </button>
+                     
+                     
+                      <div class="nav-item dropdown px-3">
+                        <button type="button" class="btn btn-primary">
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Threat Reporting</a> 
+                          </button>
+                          
+                          <div class="dropdown-menu">
+                              <a href="/viewthreat" class="dropdown-item">View Threat Report </a>
+                              <a href="/viewtechnique" class="dropdown-item">View Technique Report </a>
+                              <a href="/viewawareness" class="dropdown-item">View Awareness Campaigns </a>
+                              
+                              <a href="#" class="dropdown-item">Social Media Integration</a>
+                          </div> 
+                      </div>
+
+
+                      <div class="nav-item dropdown px-3">
+                        <button type="button" class="btn btn-primary">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Analysis</a>
+                      </button>
+                        <div class="dropdown-menu">
+                          
+                            <a href="/monthlyanalysis" class="dropdown-item">Monthly Threat Reports</a></button>
+                            <a href="/annualanalysis" class="dropdown-item">Annual Threat Reports</a>
+                            
+                        </div>    
+                    </div>
+                      
+      
+                      <div class="nav-item dropdown ">
+                        <button type="button" class="btn btn-primary">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Setup</a>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">User Accounts</a>
+                            <a href="#" class="dropdown-item">Audit trails</a>
+                            <a href="#" class="dropdown-item">API</a>
+                            
+                        </div>
+                  </div>
+                  
+                  <button type="button" class="btn btn-primary">
+                  <a href="/help" class="nav-item nav-link active ">Help</a>
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    <a href="/loginPage" class="nav-item nav-link active ">Login</a>
+                    </button>
+                
+
+                 
+              </div>
+              
+
+              </div>
+          </nav>
+        </nav>
+        </form>
+      
+      </body>
+    
+      </html>
+    </div>
+    </div>
+        
+      <div class="container">
+        
+        </div>
+      
+      </header>   
+
+ 
+</div> -->
+
+
+
+  
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Social Media Threats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"/> -->
+    <style>
+		
+      /* #logo{
+      } */
+  
+      body{
+        background-color: #fff;
+      }
+  
+  
+      #Total-Threats{
+        /* background-color: #4cb4c7; */
+        background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+      }
+  
+  
+      #Awareness-Campaigns{
+        /* background-color: #7abecc; */
+        background: linear-gradient(45deg,#FFB64D,#ffcb80);
+      }
+  
+      #Perpetration-Techniques{
+        /* background-color: #7CD1C0; */
+        background: linear-gradient(45deg,#FF5370,#ff869a);
+      }
+
+      #Summation{
+        /* background-color: #7CD1C0; */
+        background: linear-gradient(45deg,#6453ff,#86b0ff);
+      }
+  
+  
+  
+  
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1>NavBar</h1> -->
+    {% include 'beforenavbar.html' %}
+
+    <hr>
+    {% block content %}
+
+    {% endblock %}
+
+    <hr>
+    {% include 'footer.html' %}
+
+  </body>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html> -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
+        
+      

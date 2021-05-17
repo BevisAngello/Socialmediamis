@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" class="post-form" action="">
+    <input type="hidden" name="id" pk="id" required maxlength="20" value="{{ threats.pk }}"/>
+    {% csrf_token %}
+    <div class="container">
+<br>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <h3>Report Threat</h3>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" value="{{threats.name}}">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Type of Social Media Crime:</label>
+    <div class="col-sm-4">
+        <input type="text" name="typeofsocialmediacrime" value="{{threats.typeofsocialmediacrime}}">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Description:</label>
+    <div class="col-sm-4">
+        <input type="text" name="descriptionofthreat" value="{{threats.descriptionofthreat}}">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">District:</label>
+    <div class="col-sm-4">
+        <input type="text" name="district" value="{{threats.district}}">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Village:</label>
+    <div class="col-sm-4">
+        <input type="text" name="village" value="{{threats.village}}">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+    </div>
+</div>
+    </div>
+</form>
+
+
+{% endblock content %}

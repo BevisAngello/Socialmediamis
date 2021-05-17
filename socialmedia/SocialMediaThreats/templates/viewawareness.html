@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+<div class="container-fluid" >
+    <br> 
+<a href="/awareness" class="btn btn-info" role="button">Add Awareness Campaign</a>
+     <table class="table table-bordered" style="background-color: white;">
+    <thead>
+
+    <tr>
+    <style>
+        .table-container {
+            width: 300%;
+        }
+    </style>
+        <th>#</th>
+        <th>Name of Campaign</th>
+        <th>Type of Awareness</th>
+        <th>Description of Awareness</th>
+        <th>Actions</th>
+    </tr>
+    </thead> 
+    
+    {% for awareness in awareness %}
+    <tr>
+        <td>{{ awareness.id }}</td>
+        <td>{{ awareness.name_person_awareness }}</td>
+        <td>{{ awareness.typeofawareness }}</td>
+        <td>{{ awareness.descriptionofawareness }}</td>
+
+        
+        <td>
+            <a href="/editawareness/{{ awareness.id }}"><span class="btn btn-success" >Edit</span></a>
+            <a href="/delete/{{ awareness.id }}" class="btn btn-danger">Delete</a>
+        </td>
+        
+    </tr>
+    {% endfor %}
+    </table>
+</div>  
+    
+
+
+{% endblock content %}

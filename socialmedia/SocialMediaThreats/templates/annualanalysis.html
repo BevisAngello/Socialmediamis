@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="container-fluid" >
+        
+  <br> 
+     <table class="table table-striped table-boarder table-sm">
+     
+
+        <thead class="thead-gray">
+            <th>Awareness Campaigns</th>
+            </thead>
+
+    <thead class="thead-dark">
+
+    <tr>
+    
+        <th>#</th>
+        <th>Awareness</th>
+        <th>Type of Awareness</th>
+        <th>Discription of awareness</th>
+        <!-- <th>Actions</th> -->
+    </tr>
+    </thead> 
+    {% for SocialMediaThreats in SocialMediaThreats %}
+    <tr>
+        <td>{{ SocialMediaThreats.id }}</td>
+        <td>{{ SocialMediaThreats.name_person_awareness }}</td>
+        <td>{{ SocialMediaThreats.typeofawareness }}</td>
+        <td>{{ SocialMediaThreats.descriptionofawareness }}</td>
+        
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+
+<div class="container-fluid" >
+
+        <!-- <thead class="thead-gray">
+            <th>Report Filters</th>
+            </thead>
+            <br> -->
+            <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css"/> -->
+            <div class="card card-body">
+    <div class="row">
+        <div class="col-sm-4" >
+            
+            
+    
+                <form method="get">
+    
+                    {{ myFilter.form|crispy }}
+
+                    
+                    
+    
+                <button class="btn btn-primary" type="submit">Search</button>
+                <!-- <input type="text"  class="form-control" style="width: 300px;" name="Search"/> -->
+                
+    
+            
+        </form>
+        </div>
+        </div>
+      </div>
+    
+      <!-- <form >
+          <li>
+        <button href="/addthreat" class="btn btn-primary" type="button">Add New Threat</button>
+    </li>
+      </form> -->
+      <br> 
+      <a href="/addthreat" class="btn btn-info" role="button">Add New Threat</a>
+     <!-- <table class="table table-bordered" style="background-color: white;"> -->
+     
+     <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-borderless" style="background-color: white;">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Social Media Crime</th>
+                        <th>Description</th>
+                        <th>District</th>
+                        <th>Village</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for threats in threats %}
+                    <tr>
+                        <td>{{ threats.id }}</td>
+                        <td>{{ threats.name }}</td>
+                        <td>{{ threats.typeofsocialmediacrime }}</td>
+                        <td>{{ threats.descriptionofthreat }}</td>
+                        <td>{{ threats.district }}</td>
+                        <td>{{ threats.village }}</td>
+                        <td>
+                            <a href="/editthreat/{{ threats.id }}"><span class="btn btn-success">Edit</span></a>
+                            <a href="/delete/{{ threats.id }}" class="btn btn-danger">Delete</a>
+                        </td>
+                    
+                    </tr>
+                    {% endfor %}
+                    </table>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+{% endblock content %}
+

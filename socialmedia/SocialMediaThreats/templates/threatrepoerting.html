@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+
+    
+    
+</head>
+<body>
+<form method="post" class="post-form" action="/AddStudent/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <h3>Enter Student Details</h3>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label"> Student's Name:</label>
+    <div class="col-sm-4">
+        {{ form.Studentname}}
+       
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2" col-form-label"> Parent's/Guardian Name:</label>
+    <div class="col-sm-4">
+        {{form.Parentname}}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Parent's/Gurdian Contact:</label>
+    <div class="col-sm-4">
+        {{ form.Parentcontact }}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student's Class:</label>
+    <div class="col-sm-4">
+        {{ form.StudentClass }}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+    </div>
+</div>
+    </div>
+</form>
+</body>
+</html>
+
+{% endblock content %}

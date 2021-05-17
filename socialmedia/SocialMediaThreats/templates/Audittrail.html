@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" >
+<br> 
+<!-- <a href="/techniques" class="btn btn-info" role="button">Add New Technique</a> -->
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-bordered" style="background-color: white;">
+                <tr>
+                    <th>#</th>
+                    <th>User</th>
+                    <th>PAGE CHECK</th>
+                    <th>Method</th>
+                    <th>Date</th>
+                    <!-- <th>Actions</th> -->
+                </tr>
+               
+                
+                {% for requestevent in requestevent %}
+                <tr>
+                    <td>{{ requestevent.id }}</td>
+                    <td>{{ requestevent.user.username }}</td>
+                    <td>{{ requestevent.url }}</td>
+                    <td>{{ requestevent.method }}</td>
+                    <td>{{ requestevent.datetime }}</td>
+                    <!-- <td>
+                        <a href="/edittechnique/{{ techniques.id }}"><span class="btn btn-success">Edit</span></a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </td> -->
+                
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="container-fluid" >
+<br> 
+<a href="/techniques" class="btn btn-info" role="button">Add New Technique</a>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-bordered" style="background-color: white;">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Title of Organisation</th>
+                    <th>Name of Technique</th>
+                    <th>Description of Technique</th>
+                    <th>Actions</th>
+                </tr>
+                {% for techniques in techniques %}
+                <tr>
+                    <td>{{ techniques.id }}</td>
+                    <td>{{ techniques.name_person_technique }}</td>
+                    <td>{{ techniques.title }}</td>
+                    <td>{{ techniques.name_of_technique }}</td>
+                    <td>{{ techniques.descriptionoftechnique }}</td>
+                    <td>
+                        <a href="/edittechnique/{{ techniques.id }}"><span class="btn btn-success">Edit</span></a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </td>
+                
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock content %}

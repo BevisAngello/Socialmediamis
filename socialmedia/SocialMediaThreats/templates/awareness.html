@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" class="post-form" action="/awareness/">
+    {% csrf_token %}
+    <div class="container-fluid">
+<br>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <h3>Add Social Media Awareness Capaign</h3>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label"> Name:</label>
+    <div class="col-sm-4">
+        {{ form.name_person_awareness}}
+       
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label"> Type of awareness campaign:</label>
+    <div class="col-sm-4">
+        {{form.typeofawareness}}
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Description:</label>
+    <div class="col-sm-4">
+        {{ form.descriptionofawareness }}
+    </div>
+    
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- <button type="reset" class="btn btn-secondary">Cancel</button> -->
+    </div>
+</div>
+    </div>
+</form>
+
+
+{% endblock content %}
